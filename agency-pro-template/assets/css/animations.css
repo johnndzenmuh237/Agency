@@ -1,0 +1,90 @@
+/* ==========================================================================
+   FORGE & CO — animations.css
+   Scroll reveals, keyframes, and micro-interactions.
+   Respects prefers-reduced-motion via the rule in style.css
+   ========================================================================== */
+
+/* generic scroll-reveal: elements get [data-reveal] in HTML and ".is-revealed"
+   is toggled by main.js via IntersectionObserver */
+[data-reveal]{
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+[data-reveal].is-revealed{ opacity: 1; transform: translateY(0); }
+
+[data-reveal="fade"]{ transform:none; }
+[data-reveal="left"]{ transform: translateX(-36px); }
+[data-reveal="left"].is-revealed{ transform: translateX(0); }
+[data-reveal="right"]{ transform: translateX(36px); }
+[data-reveal="right"].is-revealed{ transform: translateX(0); }
+[data-reveal="scale"]{ transform: scale(.92); }
+[data-reveal="scale"].is-revealed{ transform: scale(1); }
+
+/* stagger helper for grouped reveals */
+[data-reveal-group] > *:nth-child(1){ transition-delay: 0s; }
+[data-reveal-group] > *:nth-child(2){ transition-delay: .08s; }
+[data-reveal-group] > *:nth-child(3){ transition-delay: .16s; }
+[data-reveal-group] > *:nth-child(4){ transition-delay: .24s; }
+[data-reveal-group] > *:nth-child(5){ transition-delay: .32s; }
+[data-reveal-group] > *:nth-child(6){ transition-delay: .4s; }
+
+/* hero load-in sequence */
+@keyframes riseIn{
+  from{ opacity:0; transform: translateY(24px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+.hero .eyebrow{ animation: riseIn .6s var(--ease) both; }
+.hero h1{ animation: riseIn .7s var(--ease) .08s both; }
+.hero p.lead{ animation: riseIn .7s var(--ease) .16s both; }
+.hero-actions{ animation: riseIn .7s var(--ease) .24s both; }
+.hero-stats{ animation: riseIn .7s var(--ease) .32s both; }
+.hero-art{ animation: riseIn .8s var(--ease) .2s both; }
+
+@keyframes floatY{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-10px); }
+}
+.hero-art .float-tag{ animation: floatY 4.5s ease-in-out infinite; }
+.hero-art .float-tag.t2{ animation-delay: 1.2s; }
+
+@keyframes spin-slow{ to{ transform: rotate(360deg); } }
+.hero-art .ring{ animation: spin-slow 26s linear infinite; }
+
+/* stat counters pop subtly once revealed */
+@keyframes countPop{
+  from{ opacity:0; transform: scale(.7); }
+  to{ opacity:1; transform: scale(1); }
+}
+.stat-num.is-counted{ animation: countPop .4s var(--ease) both; }
+
+/* optional continuous scroll variant for the logo strip */
+@keyframes marquee{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+.logo-strip.is-marquee{ display:flex; width:200%; animation: marquee 22s linear infinite; }
+
+.accordion-panel{ will-change: max-height; }
+
+/* button press feedback */
+.btn:active{ transform: translateY(1px) scale(.99); }
+
+.portfolio-item{ will-change: transform; }
+
+/* page fade on load */
+@keyframes pageFade{
+  from{ opacity: 0; }
+  to{ opacity: 1; }
+}
+body{ animation: pageFade .4s var(--ease) both; }
+
+/* loading spinner used by contact-form.js while "sending" */
+@keyframes spin{ to{ transform: rotate(360deg); } }
+.spinner{
+  width:16px; height:16px; border-radius:50%;
+  border: 2px solid rgba(255,255,255,.4); border-top-color: #fff;
+  animation: spin .7s linear infinite; display:inline-block;
+}
+
+.fade-in{ animation: riseIn .5s var(--ease) both; }

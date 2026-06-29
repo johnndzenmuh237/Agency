@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Forge & Co</title>
+  <meta name="description" content="Start a project with Forge & Co. Tell us about your brand and we'll follow up within one business day.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"><span>F</span></span>
+        <span>Forge &amp; Co<small>Brand &amp; Digital Studio</small></span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" class="is-active">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-primary btn-sm">Start a Project</a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> / <span>Contact</span></div>
+        <h1>Let's start<br>the conversation.</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+
+        <div data-reveal="left">
+          <span class="eyebrow">Get in Touch</span>
+          <h2>Tell us where you're headed</h2>
+          <p>Fill out the form and we'll reply within one business day with next steps — usually a short call to talk through scope and timeline.</p>
+
+          <div style="margin-top:40px;">
+            <div class="contact-info-item">
+              <div class="stamp stamp--copper">@</div>
+              <div><h4>Email</h4><p>hello@forgeandco.studio</p></div>
+            </div>
+            <div class="contact-info-item">
+              <div class="stamp stamp--teal">#</div>
+              <div><h4>Phone</h4><p>(503) 555-0142</p></div>
+            </div>
+            <div class="contact-info-item">
+              <div class="stamp">HQ</div>
+              <div><h4>Studio</h4><p>118 Anvil Street, Suite 4<br>Portland, OR 97209</p></div>
+            </div>
+          </div>
+
+          <div class="map-block">
+            <div class="pin"><span>F</span></div>
+          </div>
+        </div>
+
+        <div data-reveal="right">
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" data-required placeholder="Jordan Ames">
+                <span class="field-error">Please enter your name.</span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" data-required placeholder="jordan@company.com">
+                <span class="field-error">Please enter a valid email address.</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Company name">
+              </div>
+              <div class="form-group">
+                <label for="budget">Estimated Budget</label>
+                <select id="budget" name="budget">
+                  <option value="">Select a range</option>
+                  <option>Under $5,000</option>
+                  <option>$5,000 – $15,000</option>
+                  <option>$15,000 – $50,000</option>
+                  <option>$50,000+</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service">What do you need help with?</label>
+              <select id="service" name="service">
+                <option value="">Select a service</option>
+                <option>Brand Identity &amp; Strategy</option>
+                <option>Web Design &amp; Development</option>
+                <option>Digital Marketing &amp; SEO</option>
+                <option>UI/UX &amp; Product Design</option>
+                <option>Content &amp; Social Strategy</option>
+                <option>Motion &amp; Video Production</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Project Details</label>
+              <textarea id="message" name="message" rows="5" data-required placeholder="Tell us about your brand, your goals, and your timeline."></textarea>
+              <span class="field-error">Please share a few details about your project.</span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+            <p class="form-note" style="margin-top:14px;">We typically reply within one business day.</p>
+            <div class="form-status"></div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="logo"><span class="logo-mark"><span>F</span></span><span>Forge &amp; Co<small>Brand &amp; Digital Studio</small></span></a>
+          <p>A brand and digital studio helping growing companies look, sound, and convert like the market leaders they're becoming.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="LinkedIn">LI</a>
+            <a href="#" aria-label="X / Twitter">X</a>
+            <a href="#" aria-label="Dribbble">DR</a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Work</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Stay in the Loop</h4>
+          <p>Monthly notes on brand and growth. No noise, unsubscribe anytime.</p>
+          <form class="footer-newsletter" onsubmit="return false;">
+            <input type="email" placeholder="you@company.com" aria-label="Email address" required>
+            <button class="btn btn-light btn-block btn-sm" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year></span> Forge &amp; Co. All rights reserved.</span>
+        <span><a href="#">Privacy Policy</a> &middot; <a href="#">Terms of Service</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/contact-form.js"></script>
+</body>
+</html>

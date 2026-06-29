@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — Forge & Co Template</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <style>
+    .doc-wrap{ max-width:880px; margin:0 auto; padding: 70px var(--space-md) 120px; }
+    .doc-wrap h2{ margin-top: var(--space-xl); }
+    .doc-wrap h3{ margin-top: var(--space-lg); text-transform:none; font-family:var(--font-body); font-weight:700; }
+    .doc-wrap code{ background: var(--paper-deep); padding:2px 7px; border-radius:4px; font-family: var(--font-mono); font-size:0.88em; }
+    .doc-wrap pre{ background: var(--ink); color: var(--paper); padding: var(--space-md); border-radius: var(--radius); overflow-x:auto; font-family: var(--font-mono); font-size:0.85rem; line-height:1.6; }
+    .doc-wrap table{ width:100%; border-collapse:collapse; margin: var(--space-md) 0; }
+    .doc-wrap th, .doc-wrap td{ text-align:left; padding:10px 14px; border-bottom:1px solid var(--line); font-size:0.95rem; }
+    .doc-wrap th{ font-family: var(--font-mono); text-transform:uppercase; font-size:0.75rem; letter-spacing:.05em; color: var(--ink-faint); }
+    .swatch{ display:inline-flex; align-items:center; gap:8px; margin: 4px 14px 4px 0; font-family: var(--font-mono); font-size:0.85rem; }
+    .swatch i{ width:18px; height:18px; border-radius:4px; display:inline-block; border:1px solid var(--line); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark"><span>F</span></span>
+        <span>Forge &amp; Co<small>Template Docs</small></span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html">View Live Template</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-wrap">
+
+    <span class="eyebrow">Documentation</span>
+    <h1>Forge &amp; Co — Agency Pro Template</h1>
+    <p>A clean, professional, fully static HTML/CSS/JS template for an agency or studio website. No build tools, no frameworks, no dependencies beyond three Google Fonts loaded via CDN. Open any page directly in a browser or upload the whole folder to any static host.</p>
+
+    <h2>Folder Structure</h2>
+    <pre>agency-pro-template/
+├── index.html              Homepage
+├── about.html               About / company story
+├── services.html             Services overview
+├── service-single.html        Single service detail
+├── portfolio.html             Portfolio grid + filter
+├── portfolio-single.html       Single case study
+├── pricing.html               Pricing tiers
+├── team.html                  Team grid
+├── testimonials.html          Client testimonials
+├── faq.html                   FAQ accordion
+├── contact.html                Contact form
+├── blog.html                  Blog grid
+├── blog-single.html            Single article + sidebar
+├── 404.html                    Error page
+├── assets/
+│   ├── css/style.css           Design tokens + components
+│   ├── css/responsive.css      Breakpoints (1100 / 860 / 600px)
+│   ├── css/animations.css      Keyframes + scroll reveal
+│   ├── js/main.js              Nav, accordion, counters, reveal
+│   ├── js/slider.js             Testimonial / hero carousel
+│   ├── js/portfolio-filter.js   Portfolio category filter
+│   ├── js/contact-form.js       Form validation + submit flow
+│   ├── images/                 Drop real photos in matching folders
+│   └── fonts/                  Optional local font files
+└── documentation/index.html    This page</pre>
+
+    <h2>Design System</h2>
+    <p>Colors and type are defined once as CSS variables at the top of <code>style.css</code>, so a full re-theme only touches one block.</p>
+    <div>
+      <span class="swatch"><i style="background:#ECEAE3;"></i> --paper</span>
+      <span class="swatch"><i style="background:#1B1815;"></i> --ink</span>
+      <span class="swatch"><i style="background:#C1542C;"></i> --copper</span>
+      <span class="swatch"><i style="background:#2C6E6B;"></i> --teal</span>
+    </div>
+    <p><strong>Typography:</strong> <code>Big Shoulders</code> for headings (bold, condensed, uppercase), <code>Inter</code> for body copy, and <code>IBM Plex Mono</code> for labels, tags, and eyebrows.</p>
+
+    <h2>Customizing Colors &amp; Fonts</h2>
+    <p>Open <code>assets/css/style.css</code> and edit the <code>:root</code> block near the top:</p>
+    <pre>:root{
+  --paper: #ECEAE3;   /* light background */
+  --ink:   #1B1815;   /* primary text / dark sections */
+  --copper:#C1542C;   /* primary accent / CTAs */
+  --teal:  #2C6E6B;   /* secondary accent */
+}</pre>
+    <p>To change fonts, edit the <code>@import</code> at the very top of the same file and update the <code>--font-display</code>, <code>--font-body</code>, and <code>--font-mono</code> variables.</p>
+
+    <h2>Replacing Placeholder Images</h2>
+    <p>Every photo slot currently renders a styled <code>.img-placeholder</code> block (a diagonal pattern + label) instead of a broken image link. To drop in a real photo, replace the placeholder div with an <code>&lt;img&gt;</code> tag inside the same wrapper — sizing is already handled by the wrapper class:</p>
+    <pre>&lt;div class="team-photo"&gt;
+  &lt;img src="assets/images/team/mara.jpg" alt="Mara Whitfield"&gt;
+&lt;/div&gt;</pre>
+    <table>
+      <tr><th>Wrapper Class</th><th>Used For</th><th>Suggested Folder</th></tr>
+      <tr><td>.team-photo</td><td>Team headshots</td><td>assets/images/team/</td></tr>
+      <tr><td>.blog-thumb</td><td>Blog post covers</td><td>assets/images/blog/</td></tr>
+      <tr><td>.portfolio-item</td><td>Case study thumbnails</td><td>assets/images/portfolio/</td></tr>
+      <tr><td>.testimonial-author img</td><td>Client avatars</td><td>assets/images/testimonials/</td></tr>
+      <tr><td>.post-cover</td><td>Article hero images</td><td>assets/images/blog/</td></tr>
+    </table>
+
+    <h2>JavaScript Modules</h2>
+    <h3>main.js</h3>
+    <p>Runs on every page. Handles the sticky header shadow, mobile nav toggle, scroll-reveal animations (<code>[data-reveal]</code>), the FAQ accordion, animated stat counters (<code>[data-count]</code>), the back-to-top button, and the footer year stamp.</p>
+    <h3>slider.js</h3>
+    <p>Powers any element marked <code>[data-slider]</code> — used for the testimonial carousel. Supports arrows, dots, swipe gestures, autoplay, and pauses automatically when scrolled off screen.</p>
+    <h3>portfolio-filter.js</h3>
+    <p>Wires up <code>.filter-btn[data-filter]</code> controls to show/hide <code>.portfolio-item[data-category]</code> elements on the Portfolio page.</p>
+    <h3>contact-form.js</h3>
+    <p>Validates required fields and email format, then simulates a network submission with a loading state and success/error message. Replace the <code>simulateSubmit()</code> function with a real <code>fetch()</code> call to your backend or form service.</p>
+
+    <h2>Adding a New Page</h2>
+    <p>Copy any existing page closest to what you need, keep the <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> blocks as-is (just update the active nav link), and replace the content inside <code>&lt;main&gt;</code>. All shared components — buttons, cards, the accordion, the form — are already styled and ready to reuse.</p>
+
+    <h2>Browser Support</h2>
+    <p>Built with standard, modern CSS (Grid, custom properties, <code>clamp()</code>) and vanilla JS (no jQuery, no build step). Tested against current Chrome, Firefox, Safari, and Edge. Layouts respond down to 360px-wide phones, and all animation respects <code>prefers-reduced-motion</code>.</p>
+
+    <h2>License</h2>
+    <p>See <code>README.md</code> in the project root for license and usage terms.</p>
+
+  </main>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
